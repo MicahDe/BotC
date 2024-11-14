@@ -1,0 +1,383 @@
+/**
+ * COPYRIGHT 2023 Micah De Silva
+ */
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b2021;
+    color: #fff;
+}
+
+/* Section Title Styling */
+.section-title {
+    text-align: center;
+    color: #dddddd;
+    font-size: 1.2em;
+    margin: 0;
+    text-transform: uppercase;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Set to the top of the viewport */
+    background-color: #1b2021; /* Background color of the title */
+    z-index: 10; /* Ensure it's above other content */
+    padding: 20px 0;
+}
+
+/* Role Container Styling */
+.role-container, .selection-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 125px));
+    gap: 7px 3px;
+    padding: 10px 2px;
+    background-color: #30343f;
+    justify-content: center; /* Centers the grid items */
+}
+
+/* Role Button Styling */
+.role-button, .role-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 0px 0px 0px;
+    border-radius: 8px;
+    background-color: #1b2021;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color .5s ease, border-color .5s ease;
+    cursor: pointer;
+    width: 120px;
+    font-size: .8em;
+    height: 150px;
+}
+
+.role-box {
+    position: relative; /* Added for absolute positioning of the checkbox */
+    border: 2px solid transparent; /* Default border color */
+    height: 150px;
+    padding-bottom: 30px;
+}
+
+.role-box.selected {
+    border-color: #ffffff; /* Change border color when selected */
+    background-color: #111111; /* Optional: change background color when selected */
+}
+
+.role-button p {
+    margin: 7px 2px;
+}
+
+.role-name {
+    margin: 5px 0;
+    color: #fff;
+    height: 20px;
+}
+
+.role-button img, .role-icon {
+    margin: 5px 2px;
+    width: 60px;
+    height: 60px;
+}
+
+
+.role-gist {
+    font-size: 0.8em; /* Slightly smaller text */
+    color: #888; /* Subtle text color */
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    height: 40px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    /* Mobile specific styles */
+}
+
+@media only screen and (min-width: 601px) {
+    .role-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.url-container, .button-container  {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#generatedUrl {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 5px;
+    width: 70%;
+}
+
+#copyUrlButton, #generateUrlButton, #viewOrderButton, #rules, #launchUrlButton, #roleCounts {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+#copyUrlButton:hover, #generateUrlButton:hover {
+    background-color: #45a049;
+}
+
+/* Style for the selection area at the bottom of the box */
+.selection-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle background color */
+    text-align: center;
+    line-height: 40px; /* Match height */
+    font-size: 1.5em;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Adjust the checkbox to fill the selection area */
+.role-checkbox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px; /* Match selection area */
+    opacity: 0; /* Hide the default checkbox */
+}
+
+
+
+/* POPUP Styling */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background-color: #f4f3ee;
+    color: #2c2c2c;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+}
+
+/* Close the popup when clicking outside */
+.popup:target {
+    display: none;
+}
+
+.popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: #f4f3ee;
+    color: #2c2c2c;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000;
+    text-align: center;
+    max-width: 400px;
+}
+
+/*.popup-content {
+    padding: 20px;
+}*/
+
+
+.popup-icon {
+    display: block;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+}
+
+
+/* NIGHT ORDER MODAL */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 15; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color: #111;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+.modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.modal-content th, .modal-content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.modal-content th {
+    background-color: #2b3031;
+    color: white;
+    font-weight: normal;
+}
+
+.modal-content tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.modal-content tr:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.script-name-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#scriptName {
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+
+
+/* LANDING PAGE */
+.centered-container {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    height: 100vh; /* Full viewport height */
+}
+
+
+.landing-container {
+    padding: 20px 20px;
+    color: #bbb;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.script-buttons, .selection-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the buttons */
+    margin-bottom: 20px;
+}
+.script-button {
+    display: block; /* Make buttons block-level for full width */
+    background-color: #2b3031;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px 0; /* Vertical spacing between buttons */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 80%; /* Adjust the width as needed */
+    text-align: center; /* Center the text inside the button */
+}
+
+.script-button:hover {
+    background-color: #4CAF50;
+}
+
+.landing-image {
+    height: 30%; /* Full width on mobile */
+    max-width: 512px; /* Maximum width */
+    width: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
+    animation: slidein 1s ease 200ms forwards;
+    opacity: 0;
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
+    .centered-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .landing-container {
+        order: 2; /* Move content below the image */
+    }
+
+    .landing-image {
+        order: 1; /* Image above the content */
+    }
+
+    .modal-content {
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .modal-content table {
+        width: auto; /* Allow table to expand as needed */
+    }
+}
+
+
+
+
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

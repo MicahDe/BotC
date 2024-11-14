@@ -1,0 +1,6 @@
+node_modules
+/dist/main.js
+dist
+yarn.lock
+.vs
+package-lock.json

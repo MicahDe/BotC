@@ -1,0 +1,994 @@
+[
+    {
+        "name": "Washerwoman",
+        "roleType": "townsfolk",
+        "description": "You start knowing that 1 of 2 players is a particular Townsfolk.",
+        "iconPath": "res/icons/Washerwoman_icon.webp",
+        "gist": "Identifies a Townsfolk.",
+        "encoding": "Wa"
+    },
+    {
+        "name": "Librarian",
+        "roleType": "townsfolk",
+        "description": "You start knowing that 1 of 2 players is a particular Outsider. (Or that zero are in play.)",
+        "iconPath": "res/icons/Librarian_icon.webp",
+        "gist": "Identifies an Outsider.",
+        "encoding": "Li"
+    },
+    {
+        "name": "Investigator",
+        "roleType": "townsfolk",
+        "description": "You start knowing that 1 of 2 players is a particular Minion.",
+        "iconPath": "res/icons/Investigator_icon.webp",
+        "gist": "Identifies a Minion.",
+        "encoding": "In"
+    },
+    {
+        "name": "Chef",
+        "roleType": "townsfolk",
+        "description": "You start knowing how many pairs of evil players there are.",
+        "iconPath": "res/icons/Chef_icon.webp",
+        "gist": "Detects evil pairs.",
+        "encoding": "Ch"
+    },
+    {
+        "name": "Empath",
+        "roleType": "townsfolk",
+        "description": "Each night, you learn how many of your 2 alive neighbours are evil.",
+        "iconPath": "res/icons/Empath_icon.webp",
+        "gist": "Senses evil neighbours.",
+        "encoding": "Em"
+    },
+    {
+        "name": "Fortune Teller",
+        "roleType": "townsfolk",
+        "description": "Each night, choose 2 players: you learn if either is a Demon. There is a good player that registers as a Demon to you.",
+        "iconPath": "res/icons/Fortune Teller_icon.webp",
+        "gist": "Detects Demons.",
+        "encoding": "Fo"
+    },
+    {
+        "name": "Undertaker",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), you learn which character died by execution today.",
+        "iconPath": "res/icons/Undertaker_icon.webp",
+        "gist": "Learns executed roles.",
+        "encoding": "Un"
+    },
+    {
+        "name": "Monk",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), choose a player (not yourself): they are safe from the Demon tonight.",
+        "iconPath": "res/icons/Monk_icon.webp",
+        "gist": "Protects nightly.",
+        "encoding": "Mo"
+    },
+    {
+        "name": "Slayer",
+        "roleType": "townsfolk",
+        "description": "Once per game, during the day, publicly choose a player: if they are the Demon, they die.",
+        "iconPath": "res/icons/Slayer_icon.webp",
+        "gist": "Predicts Demon, kills if correct.",
+        "encoding": "Sl"
+    },
+    {
+        "name": "Soldier",
+        "roleType": "townsfolk",
+        "description": "You are safe from the Demon.",
+        "iconPath": "res/icons/Soldier_icon.webp",
+        "gist": "Immune to Demon.",
+        "encoding": "So"
+    },
+    {
+        "name": "Ravenkeeper",
+        "roleType": "townsfolk",
+        "description": "If you die at night, you are woken to choose a player: you learn their character.",
+        "iconPath": "res/icons/Ravenkeeper_icon.webp",
+        "gist": "Learns character on death.",
+        "encoding": "Ra"
+    },
+    {
+        "name": "Virgin",
+        "roleType": "townsfolk",
+        "description": "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately.",
+        "iconPath": "res/icons/Virgin_icon.webp",
+        "gist": "Executes Townsfolk nominator.",
+        "encoding": "Vi"
+    },
+    {
+        "name": "Mayor",
+        "roleType": "townsfolk",
+        "description": "If only 3 players live & no execution occurs, your team wins. If you die at night, another player might die instead.",
+        "iconPath": "res/icons/Mayor_icon.webp",
+        "gist": "Wins with 3 alive.",
+        "encoding": "Ma"
+    },
+    {
+        "name": "Butler",
+        "roleType": "outsider",
+        "description": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too.",
+        "iconPath": "res/icons/Butler_icon.webp",
+        "gist": "Votes with chosen player.",
+        "encoding": "Bu"
+    },
+    {
+        "name": "Saint",
+        "roleType": "outsider",
+        "description": "If you die by execution, your team loses.",
+        "iconPath": "res/icons/Saint_icon.webp",
+        "gist": "Loses if executed.",
+        "encoding": "Sa"
+    },
+    {
+        "name": "Recluse",
+        "roleType": "outsider",
+        "description": "You might register as evil & as a Minion or Demon, even if dead.",
+        "iconPath": "res/icons/Recluse_icon.webp",
+        "gist": "Might appear evil.",
+        "encoding": "Re"
+    },
+    {
+        "name": "Drunk",
+        "roleType": "outsider",
+        "description": "You do not know you are the Drunk. You think you are a Townsfolk character, but you are not.",
+        "iconPath": "res/icons/Drunk_icon.webp",
+        "gist": "Unknowingly misinformed.",
+        "encoding": "Dr"
+    },
+    {
+        "name": "Poisoner",
+        "roleType": "minion",
+        "description": "Each night, choose a player: they are poisoned tonight and tomorrow day.",
+        "iconPath": "res/icons/Poisoner_icon.webp",
+        "gist": "Poisons player.",
+        "encoding": "Poi"
+    },
+    {
+        "name": "Spy",
+        "roleType": "minion",
+        "description": "Each night, you see the Grimoire. You might register as good & as a Townsfolk or Outsider, even if dead.",
+        "iconPath": "res/icons/Spy_icon.webp",
+        "gist": "Sees Grimoire.",
+        "encoding": "Sp"
+    },
+    {
+        "name": "Baron",
+        "roleType": "minion",
+        "description": "There are extra Outsiders in play. [+2 Outsiders]",
+        "iconPath": "res/icons/Baron_icon.webp",
+        "gist": "Adds Outsiders.",
+        "encoding": "Ba"
+    },
+    {
+        "name": "Scarlet Woman",
+        "roleType": "minion",
+        "description": "If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers don\u2019t count)",
+        "iconPath": "res/icons/Scarlet Woman_icon.webp",
+        "gist": "Becomes Demon.",
+        "encoding": "Sc"
+    },
+    {
+        "name": "Imp",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. If you kill yourself this way, a Minion becomes the Imp.",
+        "iconPath": "res/icons/Imp_icon.webp",
+        "gist": "Kills nightly.",
+        "encoding": "Im"
+    },
+    {
+        "name": "Grandmother",
+        "roleType": "townsfolk",
+        "description": "You start knowing a good player & their character. If the Demon kills them, you die too.",
+        "iconPath": "res/icons/Grandmother_icon.webp",
+        "gist": "Knows good character. Dies with them.",
+        "encoding": "Gr"
+    },
+    {
+        "name": "Sailor",
+        "roleType": "townsfolk",
+        "description": "Each night, choose an alive player: either you or they are drunk until dusk. You can't die.",
+        "iconPath": "res/icons/Sailor_icon.webp",
+        "gist": "Chooses nightly drunk. Can't die.",
+        "encoding": "Sai"
+    },
+    {
+        "name": "Chambermaid",
+        "roleType": "townsfolk",
+        "description": "Each night, choose 2 alive players (not yourself): you learn how many woke tonight due to their ability.",
+        "iconPath": "res/icons/Chambermaid_icon.webp",
+        "gist": "Detects active players.",
+        "encoding": "Cha"
+    },
+    {
+        "name": "Exorcist",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), choose a player (different to last night): the Demon, if chosen, learns who you are then doesn't wake tonight.",
+        "iconPath": "res/icons/Exorcist_icon.webp",
+        "gist": "Blocks Demon.",
+        "encoding": "Ex"
+    },
+    {
+        "name": "Innkeeper",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), choose 2 players: they can't die tonight, but 1 is drunk until dusk.",
+        "iconPath": "res/icons/Innkeeper_icon.webp",
+        "gist": "Protects two. Causes drunk.",
+        "encoding": "Inn"
+    },
+    {
+        "name": "Gambler",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), choose a player & guess their character: if you guess wrong, you die.",
+        "iconPath": "res/icons/Gambler_icon.webp",
+        "gist": "Guesses character. Risks death.",
+        "encoding": "Ga"
+    },
+    {
+        "name": "Gossip",
+        "roleType": "townsfolk",
+        "description": "Each day, you may make a public statement. Tonight, if it was true, a player dies.",
+        "iconPath": "res/icons/Gossip_icon.webp",
+        "gist": "Statement kills if true.",
+        "encoding": "Go"
+    },
+    {
+        "name": "Courtier",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night, choose a character: they are drunk for 3 nights & 3 days.",
+        "iconPath": "res/icons/Courtier_icon.webp",
+        "gist": "Drunkens a character.",
+        "encoding": "Co"
+    },
+    {
+        "name": "Professor",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night (except the first night), choose a dead player: if they are a Townsfolk, they are resurrected.",
+        "iconPath": "res/icons/Professor_icon.webp",
+        "gist": "Resurrects Townsfolk.",
+        "encoding": "Pr"
+    },
+    {
+        "name": "Minstrel",
+        "roleType": "townsfolk",
+        "description": "When a Minion dies by execution, all other players (except Travellers) are drunk until dusk tomorrow.",
+        "iconPath": "res/icons/Minstrel_icon.webp",
+        "gist": "Drunkens on Minion death.",
+        "encoding": "Mi"
+    },
+    {
+        "name": "Tea Lady",
+        "roleType": "townsfolk",
+        "description": "If both your alive neighbours are good, they can't die.",
+        "iconPath": "res/icons/Tea Lady_icon.webp",
+        "gist": "Protects good neighbours.",
+        "encoding": "Te"
+    },
+    {
+        "name": "Pacifist",
+        "roleType": "townsfolk",
+        "description": "Executed good players might not die.",
+        "iconPath": "res/icons/Pacifist_icon.webp",
+        "gist": "May save executed.",
+        "encoding": "Pa"
+    },
+    {
+        "name": "Fool",
+        "roleType": "townsfolk",
+        "description": "The first time you die, you don't.",
+        "iconPath": "res/icons/Fool_icon.webp",
+        "gist": "Survives first death.",
+        "encoding": "Foo"
+    },
+    {
+        "name": "Goon",
+        "roleType": "outsider",
+        "description": "Each night, the 1st player to choose you with their ability is drunk until dusk. You become their alignment.",
+        "iconPath": "res/icons/Goon_icon.webp",
+        "gist": "Drunkens choosers. Swaps alignment.",
+        "encoding": "Goo"
+    },
+    {
+        "name": "Lunatic",
+        "roleType": "outsider",
+        "description": "You think you are a Demon, but you are not. The Demon knows who you are & who you choose at night.",
+        "iconPath": "res/icons/Lunatic_icon.webp",
+        "gist": "Thinks they are demon.",
+        "encoding": "Lu"
+    },
+    {
+        "name": "Tinker",
+        "roleType": "outsider",
+        "description": "You might die at any time.",
+        "iconPath": "res/icons/Tinker_icon.webp",
+        "gist": "Dies randomly.",
+        "encoding": "Ti"
+    },
+    {
+        "name": "Moonchild",
+        "roleType": "outsider",
+        "description": "When you learn that you died, publicly choose 1 alive player. Tonight, if it was a good player, they die.",
+        "iconPath": "res/icons/Moonchild_icon.webp",
+        "gist": "Kills chosen good player on death.",
+        "encoding": "Moo"
+    },
+    {
+        "name": "Godfather",
+        "roleType": "minion",
+        "description": "You start knowing which Outsiders are in play. If 1 died today, choose a player tonight: they die. [-1 or +1 Outsider]",
+        "iconPath": "res/icons/Godfather_icon.webp",
+        "gist": "Knows Outsiders. Kills if one dies.",
+        "encoding": "God"
+    },
+    {
+        "name": "Devil's Advocate",
+        "roleType": "minion",
+        "description": "Each night, choose a living player (different to last night): if executed tomorrow, they don't die.",
+        "iconPath": "res/icons/Devil's Advocate_icon.webp",
+        "gist": "Saves executed player.",
+        "encoding": "De"
+    },
+    {
+        "name": "Assassin",
+        "roleType": "minion",
+        "description": "Once per game, at night (except the first night), choose a player: they die, even if for some reason they could not.",
+        "iconPath": "res/icons/Assassin_icon.webp",
+        "gist": "Kills once.",
+        "encoding": "As"
+    },
+    {
+        "name": "Mastermind",
+        "roleType": "minion",
+        "description": "If the Demon dies by execution (ending the game), play for 1 more day. If a player is then executed, their team loses.",
+        "iconPath": "res/icons/Mastermind_icon.webp",
+        "gist": "Extends game after demon death.",
+        "encoding": "Mas"
+    },
+    {
+        "name": "Zombuul",
+        "roleType": "demon",
+        "description": "Each night (except the first night), if no-one died today, choose a player: they die. The 1st time you die, you live but register as dead.",
+        "iconPath": "res/icons/Zombuul_icon.webp",
+        "gist": "Kills if no death.",
+        "encoding": "Zo"
+    },
+    {
+        "name": "Pukka",
+        "roleType": "demon",
+        "description": "Each night, choose a player: they are poisoned. The previously poisoned player dies then becomes healthy.",
+        "iconPath": "res/icons/Pukka_icon.webp",
+        "gist": "Poisons, then kills.",
+        "encoding": "Pu"
+    },
+    {
+        "name": "Shabaloth",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose 2 players: they die. A dead player you chose last night might be regurgitated.",
+        "iconPath": "res/icons/Shabaloth_icon.webp",
+        "gist": "Kills two. One might resurrect.",
+        "encoding": "Sh"
+    },
+    {
+        "name": "Po",
+        "roleType": "demon",
+        "description": "Each night (except the first night), you may choose a player: they die. If your last choice was no-one, choose 3 players tonight.",
+        "iconPath": "res/icons/Po_icon.webp",
+        "gist": "Kills one or three.",
+        "encoding": "Po"
+    },
+    {
+        "name": "Clockmaker",
+        "roleType": "townsfolk",
+        "description": "You start knowing how many steps from the Demon to its nearest Minion.",
+        "iconPath": "res/icons/Clockmaker_icon.webp",
+        "gist": "Knows Demon distance.",
+        "encoding": "Cl"
+    },
+    {
+        "name": "Dreamer",
+        "roleType": "townsfolk",
+        "description": "Each night, choose a player (not yourself or Travellers): you learn 1 good and 1 evil character, 1 of which is correct.",
+        "iconPath": "res/icons/Dreamer_icon.webp",
+        "gist": "Learns possible characters.",
+        "encoding": "Dre"
+    },
+    {
+        "name": "Snake Charmer",
+        "roleType": "townsfolk",
+        "description": "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned.",
+        "iconPath": "res/icons/Snake Charmer_icon.webp",
+        "gist": "Swaps with Demon.",
+        "encoding": "Sn"
+    },
+    {
+        "name": "Mathematician",
+        "roleType": "townsfolk",
+        "description": "Each night, you learn how many players\u2019 abilities worked abnormally (since dawn) due to another character's ability.",
+        "iconPath": "res/icons/Mathematician_icon.webp",
+        "gist": "Detects abnormalities.",
+        "encoding": "Mat"
+    },
+    {
+        "name": "Flowergirl",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), you learn if a Demon voted today.",
+        "iconPath": "res/icons/Flowergirl_icon.webp",
+        "gist": "Detects Demon vote.",
+        "encoding": "Fl"
+    },
+    {
+        "name": "Town Crier",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), you learn if a Minion nominated today.",
+        "iconPath": "res/icons/Town Crier_icon.webp",
+        "gist": "Detects Minion nomination.",
+        "encoding": "To"
+    },
+    {
+        "name": "Oracle",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), you learn how many dead players are evil.",
+        "iconPath": "res/icons/Oracle_icon.webp",
+        "gist": "Counts evil dead.",
+        "encoding": "Or"
+    },
+    {
+        "name": "Savant",
+        "roleType": "townsfolk",
+        "description": "Each day, you may visit the Storyteller to learn 2 things in private: 1 is true & 1 is false.",
+        "iconPath": "res/icons/Savant_icon.webp",
+        "gist": "Learns mixed truths.",
+        "encoding": "Sav"
+    },
+    {
+        "name": "Seamstress",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night, choose 2 players (not yourself): you learn if they are the same alignment.",
+        "iconPath": "res/icons/Seamstress_icon.webp",
+        "gist": "Compares alignments.",
+        "encoding": "Se"
+    },
+    {
+        "name": "Philosopher",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night, choose a good character: gain that ability. If this character is in play, they are drunk.",
+        "iconPath": "res/icons/Philosopher_icon.webp",
+        "gist": "Gains character ability.",
+        "encoding": "Ph"
+    },
+    {
+        "name": "Artist",
+        "roleType": "townsfolk",
+        "description": "Once per game, during the day, privately ask the Storyteller any yes/no question.",
+        "iconPath": "res/icons/Artist_icon.webp",
+        "gist": "Asks one question.",
+        "encoding": "Ar"
+    },
+    {
+        "name": "Juggler",
+        "roleType": "townsfolk",
+        "description": "On your 1st day, publicly guess up to 5 players' characters. That night, you learn how many you got correct.",
+        "iconPath": "res/icons/Juggler_icon.webp",
+        "gist": "Guesses characters.",
+        "encoding": "Ju"
+    },
+    {
+        "name": "Sage",
+        "roleType": "townsfolk",
+        "description": "If the Demon kills you, you learn that it is 1 of 2 players.",
+        "iconPath": "res/icons/Sage_icon.webp",
+        "gist": "Learns Demon identity.",
+        "encoding": "Sag"
+    },
+    {
+        "name": "Mutant",
+        "roleType": "outsider",
+        "description": "If you are \u201cmad\u201d about being an Outsider, you might be executed.",
+        "iconPath": "res/icons/Mutant_icon.webp",
+        "gist": "Risks execution if honest.",
+        "encoding": "Mu"
+    },
+    {
+        "name": "Sweetheart",
+        "roleType": "outsider",
+        "description": "When you die, 1 player is drunk from now on.",
+        "iconPath": "res/icons/Sweetheart_icon.webp",
+        "gist": "Causes drunk on death.",
+        "encoding": "Sw"
+    },
+    {
+        "name": "Barber",
+        "roleType": "outsider",
+        "description": "If you died today or tonight, the Demon may choose 2 players (not another Demon) to swap characters.",
+        "iconPath": "res/icons/Barber_icon.webp",
+        "gist": "Swaps roles posthumously.",
+        "encoding": "Bar"
+    },
+    {
+        "name": "Klutz",
+        "roleType": "outsider",
+        "description": "When you learn that you died, publicly choose 1 alive player: if they are evil, your team loses.",
+        "iconPath": "res/icons/Klutz_icon.webp",
+        "gist": "Risks team loss.",
+        "encoding": "Kl"
+    },
+    {
+        "name": "Evil Twin",
+        "roleType": "minion",
+        "description": "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live.",
+        "iconPath": "res/icons/Evil Twin_icon.webp",
+        "gist": "Known opposing player.",
+        "encoding": "Ev"
+    },
+    {
+        "name": "Witch",
+        "roleType": "minion",
+        "description": "Each night, choose a player: if they nominate tomorrow, they die. If just 3 players live, you lose this ability.",
+        "iconPath": "res/icons/Witch_icon.webp",
+        "gist": "Kills chosen nominator.",
+        "encoding": "Wi"
+    },
+    {
+        "name": "Cerenovus",
+        "roleType": "minion",
+        "description": "Each night, choose a player & a good character: they are \u201cmad\u201d they are this character tomorrow, or might be executed.",
+        "iconPath": "res/icons/Cerenovus_icon.webp",
+        "gist": "Maddens players.",
+        "encoding": "Ce"
+    },
+    {
+        "name": "Pit-Hag",
+        "roleType": "minion",
+        "description": "Each night (except the first night), choose a player & a character they become (if not-in-play). If a Demon is made, deaths tonight are arbitrary.",
+        "iconPath": "res/icons/Pit-Hag_icon.webp",
+        "gist": "Transforms players' characters.",
+        "encoding": "Pi"
+    },
+    {
+        "name": "Fang Gu",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead. [+1 Outsider]",
+        "iconPath": "res/icons/Fang Gu_icon.webp",
+        "gist": "Kills, Outsiders become demon.",
+        "encoding": "Fa"
+    },
+    {
+        "name": "Vigormortis",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. Minions you kill keep their ability & poison 1 Townsfolk neighbour. [-1 Outsider]",
+        "iconPath": "res/icons/Vigormortis_icon.webp",
+        "gist": "Kills, keeps Minion powers.",
+        "encoding": "Vig"
+    },
+    {
+        "name": "No Dashii",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. Your 2 Townsfolk neighbours are poisoned.",
+        "iconPath": "res/icons/No Dashii_icon.webp",
+        "gist": "Kills, poisons neighbours.",
+        "encoding": "No"
+    },
+    {
+        "name": "Vortox",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. Townsfolk abilities yield false info. Each day, if no-one is executed, evil wins.",
+        "iconPath": "res/icons/Vortox_icon.webp",
+        "gist": "Kills, misinforms Townsfolk.",
+        "encoding": "Vo"
+    },
+    {
+        "name": "Alchemist",
+        "roleType": "townsfolk",
+        "description": "You have a not-in-play Minion ability.",
+        "iconPath": "res/icons/Alchemist_icon.webp",
+        "gist": "Gains Minion ability.",
+        "encoding": "Al"
+    },
+    {
+        "name": "Amnesiac",
+        "roleType": "townsfolk",
+        "description": "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are.",
+        "iconPath": "res/icons/Amnesiac_icon.webp",
+        "gist": "Unknown ability.",
+        "encoding": "Am"
+    },
+    {
+        "name": "Atheist",
+        "roleType": "townsfolk",
+        "description": "The Storyteller can break the game rules & if executed, good wins, even if you are dead. [No evil characters]",
+        "iconPath": "res/icons/Atheist_icon.webp",
+        "gist": "No evil players; must execute Storyteller.",
+        "encoding": "At"
+    },
+    {
+        "name": "Balloonist",
+        "roleType": "townsfolk",
+        "description": "Each night, you learn 1 player of each character type, until there are no more types to learn. [+1 Outsider]",
+        "iconPath": "res/icons/Balloonist_icon.webp",
+        "gist": "Learns different character types.",
+        "encoding": "Bal"
+    },
+    {
+        "name": "Bounty Hunter",
+        "roleType": "townsfolk",
+        "description": "You start knowing 1 evil player. If the player you know dies, you learn another evil player tonight. [1 Townsfolk is evil]",
+        "iconPath": "res/icons/Bounty Hunter_icon.webp",
+        "gist": "Learns evil players.",
+        "encoding": "Bo"
+    },
+    {
+        "name": "Cannibal",
+        "roleType": "townsfolk",
+        "description": "You have the ability of the recently killed executee. If they are evil, you are poisoned until a good player dies by execution.",
+        "iconPath": "res/icons/Cannibal_icon.webp",
+        "gist": "Gains executee's ability.",
+        "encoding": "Ca"
+    },
+    {
+        "name": "Choirboy",
+        "roleType": "townsfolk",
+        "description": "If the Demon kills the King, you learn which player is the Demon. [+ the King]",
+        "iconPath": "res/icons/Choirboy_icon.webp",
+        "gist": "Learns Demon if King dies.",
+        "encoding": "Cho"
+    },
+    {
+        "name": "Cult Leader",
+        "roleType": "townsfolk",
+        "description": "Each night, you become the alignment of an alive neighbour. If all good players choose to join your cult, your team wins.",
+        "iconPath": "res/icons/Cult Leader_icon.webp",
+        "gist": "Aligns with neighbours.",
+        "encoding": "Cu"
+    },
+    {
+        "name": "Engineer",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night, choose which Minions or which Demon is in play.",
+        "iconPath": "res/icons/Engineer_icon.webp",
+        "gist": "Chooses Minions or Demon.",
+        "encoding": "En"
+    },
+    {
+        "name": "Farmer",
+        "roleType": "townsfolk",
+        "description": "If you die at night, an alive good player becomes a Farmer.",
+        "iconPath": "res/icons/Farmer_icon.webp",
+        "gist": "Creates new Farmer on death.",
+        "encoding": "Far"
+    },
+    {
+        "name": "Fisherman",
+        "roleType": "townsfolk",
+        "description": "Once per game, during the day, visit the Storyteller for some advice to help you win.",
+        "iconPath": "res/icons/Fisherman_icon.webp",
+        "gist": "Seeks Storyteller's advice.",
+        "encoding": "Fi"
+    },
+    {
+        "name": "General",
+        "roleType": "townsfolk",
+        "description": "Each night, you learn which alignment the Storyteller believes is winning: good, evil, or neither.",
+        "iconPath": "res/icons/General_icon.webp",
+        "gist": "Learns winning alignment.",
+        "encoding": "Ge"
+    },
+    {
+        "name": "High Priestess",
+        "roleType": "townsfolk",
+        "description": "Each night, learn which player the Storyteller believes you should talk to most",
+        "iconPath": "res/icons/High Priestess_icon.webp",
+        "gist": "Guided by Storyteller.",
+        "encoding": "Hi"
+    },
+    {
+        "name": "Huntsman",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night, choose a living player: the Damsel, if chosen, becomes a not-in-play Townsfolk. [+the Damsel]",
+        "iconPath": "res/icons/Huntsman_icon.webp",
+        "gist": "Detects Damsel's identity.",
+        "encoding": "Hu"
+    },
+    {
+        "name": "King",
+        "roleType": "townsfolk",
+        "description": "Each night, if the dead outnumber the living, you learn 1 alive character. The Demon knows who you are.",
+        "iconPath": "res/icons/King_icon.webp",
+        "gist": "Learns character nightly.",
+        "encoding": "Ki"
+    },
+    {
+        "name": "Knight",
+        "roleType": "townsfolk",
+        "description": "You start knowing 2 players that are not the Demon",
+        "iconPath": "res/icons/Knight_icon.webp",
+        "gist": "Knows non-Demon players.",
+        "encoding": "Kn"
+    },
+    {
+        "name": "Lycanthrope",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), choose a living player: if good, they die, but they are the only player that can die tonight.",
+        "iconPath": "res/icons/Lycanthrope_icon.webp",
+        "gist": "Protects through killing.",
+        "encoding": "Ly"
+    },
+    {
+        "name": "Magician",
+        "roleType": "townsfolk",
+        "description": "The Demon thinks you are a Minion. Minions think you are a Demon.",
+        "iconPath": "res/icons/Magician_icon.webp",
+        "gist": "Deceives Demons, Minions.",
+        "encoding": "Mag"
+    },
+    {
+        "name": "Nightwatchman",
+        "roleType": "townsfolk",
+        "description": "Once per game, at night, choose a player: they learn who you are.",
+        "iconPath": "res/icons/Nightwatchman_icon.webp",
+        "gist": "Reveals self to one player.",
+        "encoding": "Ni"
+    },
+    {
+        "name": "Noble",
+        "roleType": "townsfolk",
+        "description": "You start knowing 3 players, 1 and only 1 of which is evil.",
+        "iconPath": "res/icons/Noble_icon.webp",
+        "gist": "Knows 1 of 3 is evil.",
+        "encoding": "Nob"
+    },
+    {
+        "name": "Pixie",
+        "roleType": "townsfolk",
+        "description": "You start knowing 1 in-play Townsfolk. If you were mad that you were this character, you gain their ability when they die.",
+        "iconPath": "res/icons/Pixie_icon.webp",
+        "gist": "Gains ability they were claiming.",
+        "encoding": "Pix"
+    },
+    {
+        "name": "Poppy Grower",
+        "roleType": "townsfolk",
+        "description": "Minions & Demons do not know each other. If you die, they learn who each other are that night.",
+        "iconPath": "res/icons/Poppy Grower_icon.webp",
+        "gist": "Hides evil identities.",
+        "encoding": "Pop"
+    },
+    {
+        "name": "Preacher",
+        "roleType": "townsfolk",
+        "description": "Each night, choose a player: a Minion, if chosen, learns this. All chosen Minions have no ability.",
+        "iconPath": "res/icons/Preacher_icon.webp",
+        "gist": "Blocks Minion abilities.",
+        "encoding": "Pre"
+    },
+    {
+        "name": "Shugenja",
+        "roleType": "townsfolk",
+        "description": "You start knowing if your closest evil player is clockwise or anti-clockwise. If equidistant, this info is arbitrary",
+        "iconPath": "res/icons/Shugenja_icon.webp",
+        "gist": "Detects nearest evil.",
+        "encoding": "Shu"
+    },
+    {
+        "name": "Steward",
+        "roleType": "townsfolk",
+        "description": "You start knowing 1 good player",
+        "iconPath": "res/icons/Steward_icon.webp",
+        "gist": "Knows good player.",
+        "encoding": "St"
+    },
+    {
+        "name": "Acrobat",
+        "roleType": "outsider",
+        "description": "Each night (except the first night), if either good living neighbour is drunk or poisoned, you die.",
+        "iconPath": "res/icons/Acrobat_icon.webp",
+        "gist": "Dies if neighbours malfunctioning.",
+        "encoding": "Ac"
+    },
+    {
+        "name": "Damsel",
+        "roleType": "outsider",
+        "description": "All Minions know you are in play. If a Minion publicly guesses you (once), your team loses.",
+        "iconPath": "res/icons/Damsel_icon.webp",
+        "gist": "Hunted for by minions.",
+        "encoding": "Da"
+    },
+    {
+        "name": "Golem",
+        "roleType": "outsider",
+        "description": "You may only nominate once per game. When you do, if the nominee is not the Demon, they die.",
+        "iconPath": "res/icons/Golem_icon.webp",
+        "gist": "Nominates lethally once.",
+        "encoding": "Gol"
+    },
+    {
+        "name": "Hatter",
+        "roleType": "outsider",
+        "description": "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be.",
+        "iconPath": "res/icons/Hatter_icon.webp",
+        "gist": "Transforms evil roles on death.",
+        "encoding": "Ha"
+    },
+    {
+        "name": "Heretic",
+        "roleType": "outsider",
+        "description": "Whoever wins, loses & whoever loses, wins, even if you are dead.",
+        "iconPath": "res/icons/Heretic_icon.webp",
+        "gist": "Reverses winning conditions.",
+        "encoding": "He"
+    },
+    {
+        "name": "Plague Doctor",
+        "roleType": "outsider",
+        "description": "If you die, the Storyteller gains a not-in-play Minion ability",
+        "iconPath": "res/icons/Plague Doctor_icon.webp",
+        "gist": "Gives Storyteller minion power.",
+        "encoding": "Pl"
+    },
+    {
+        "name": "Politician",
+        "roleType": "outsider",
+        "description": "If you were the player most responsible for your team losing, you change alignment & win, even if dead.",
+        "iconPath": "res/icons/Politician_icon.webp",
+        "gist": "Wins if responsible for loss.",
+        "encoding": "Pol"
+    },
+    {
+        "name": "Puzzlemaster",
+        "roleType": "outsider",
+        "description": "1 player is drunk, even if you die. If you guess (once) who it is, learn the Demon player, but guess wrong & get false info.",
+        "iconPath": "res/icons/Puzzlemaster_icon.webp",
+        "gist": "Guesses a drunken player.",
+        "encoding": "Puz"
+    },
+    {
+        "name": "Snitch",
+        "roleType": "outsider",
+        "description": "Minions start knowing 3 not-in-play characters.",
+        "iconPath": "res/icons/Snitch_icon.webp",
+        "gist": "Gives minions bluffs.",
+        "encoding": "Sni"
+    },
+    {
+        "name": "Boomdandy",
+        "roleType": "minion",
+        "description": "If you are executed, all but 3 players die. 1 minute later, the player with the most players pointing at them dies.",
+        "iconPath": "res/icons/Boomdandy_icon.webp",
+        "gist": "Mass death if executed.",
+        "encoding": "Boo"
+    },
+    {
+        "name": "Fearmonger",
+        "roleType": "minion",
+        "description": "Each night, choose a player. If you nominate & execute them, their team loses. All players know if you choose a new player.",
+        "iconPath": "res/icons/Fearmonger_icon.webp",
+        "gist": "Wins if executes target.",
+        "encoding": "Fe"
+    },
+    {
+        "name": "Goblin",
+        "roleType": "minion",
+        "description": "If you publicly claim to be the Goblin when nominated & are executed that day, your team wins.",
+        "iconPath": "res/icons/Goblin_icon.webp",
+        "gist": "Wins if executed claiming.",
+        "encoding": "Gob"
+    },
+    {
+        "name": "Harpy",
+        "roleType": "minion",
+        "description": "Each night, choose 2 players: tomorrow, the 1st player is mad the 2nd is evil, or both might die.",
+        "iconPath": "res/icons/Harpy_icon.webp",
+        "gist": "Makes players accuse others.",
+        "encoding": "Har"
+    },
+    {
+        "name": "Marionette",
+        "roleType": "minion",
+        "description": "You think you are a good character but you are not. The Demon knows who you are. [You neighbour the Demon]",
+        "iconPath": "res/icons/Marionette_icon.webp",
+        "gist": "Thinks they are good.",
+        "encoding": "Mar"
+    },
+    {
+        "name": "Mezepheles",
+        "roleType": "minion",
+        "description": "You start knowing a secret word. The 1st good player to say this word becomes evil that night.",
+        "iconPath": "res/icons/Mezepheles_icon.webp",
+        "gist": "Turns good player evil.",
+        "encoding": "Me"
+    },
+    {
+        "name": "Organ Grinder",
+        "roleType": "minion",
+        "description": "All players keep their eyes closed when voting & the vote tally is secret. Votes for you only count if you vote.",
+        "iconPath": "res/icons/Organ Grinder_icon.webp",
+        "gist": "Votes are secret.",
+        "encoding": "Org"
+    },
+    {
+        "name": "Psychopath",
+        "roleType": "minion",
+        "description": "Each day, before nominations, you may publicly choose a player: they die. If executed, you only die if you lose roshambo.",
+        "iconPath": "res/icons/Psychopath_icon.webp",
+        "gist": "Kills publicly.",
+        "encoding": "Ps"
+    },
+    {
+        "name": "Vizier",
+        "roleType": "minion",
+        "description": "All players know who you are. You can not die during the day. If good voted, you may choose to execute immediately.",
+        "iconPath": "res/icons/Vizier_icon.webp",
+        "gist": "Known, day-immune, forces execution.",
+        "encoding": "Viz"
+    },
+    {
+        "name": "Widow",
+        "roleType": "minion",
+        "description": "On your 1st night, look at the Grimoire and choose a player: they are poisoned. 1 good player knows a Widow is in play.",
+        "iconPath": "res/icons/Widow_icon.webp",
+        "gist": "Sees Grimoire, Poisons.",
+        "encoding": "Wid"
+    },
+    {
+        "name": "Al-Hadikhia",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
+        "iconPath": "res/icons/Al-Hadikhia_icon.webp",
+        "gist": "Forces life-death choice.",
+        "encoding": "Al-"
+    },
+    {
+        "name": "Kazali",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. [You choose which players are which Minions. -? to +? Outsiders]",
+        "iconPath": "res/icons/Kazali_icon.webp",
+        "gist": "Chooses Minions, kills nightly.",
+        "encoding": "Ka"
+    },
+    {
+        "name": "Legion",
+        "roleType": "demon",
+        "description": "Each night (except the first night), a player might die. Executions fail if only evil voted. You register as a Minion too. [Most players are Legion]",
+        "iconPath": "res/icons/Legion_icon.webp",
+        "gist": "Most players are legion.",
+        "encoding": "Le"
+    },
+    {
+        "name": "Leviathan",
+        "roleType": "demon",
+        "description": "If more than 1 good player is executed, evil wins. All players know you are in play. After day 5, evil wins.",
+        "iconPath": "res/icons/Leviathan_icon.webp",
+        "gist": "Wins after day 5.",
+        "encoding": "Lev"
+    },
+    {
+        "name": "Lil' Monsta",
+        "roleType": "demon",
+        "description": "Each night, Minions choose who babysits Lil' Monsta's token & 'is the Demon'. A player dies each night (except the first night). [+1 Minion]",
+        "iconPath": "res/icons/Lil' Monsta_icon.webp",
+        "gist": "A minion is the demon.",
+        "encoding": "Lil"
+    },
+    {
+        "name": "Lleech",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. You start by choosing an alive player: they are poisoned - you die if & only if they die.",
+        "iconPath": "res/icons/Lleech_icon.webp",
+        "gist": "Kills, dies when host dies.",
+        "encoding": "Ll"
+    },
+    {
+        "name": "Ojo",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a character: they die. If they are not in play, the Storyteller chooses who dies.",
+        "iconPath": "res/icons/Ojo_icon.webp",
+        "gist": "Kills chosen character.",
+        "encoding": "Oj"
+    },
+    {
+        "name": "Riot",
+        "roleType": "demon",
+        "description": "Nominees die, but may nominate again immediately (on day 3, they must). After day 3, evil wins. [All Minions are Riot]",
+        "iconPath": "res/icons/Riot_icon.webp",
+        "gist": "Nominees die.",
+        "encoding": "Ri"
+    }
+]

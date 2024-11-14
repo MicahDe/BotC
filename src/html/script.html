@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BotC Script Viewer</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+
+        <div id="nightOrderModal" class="modal">
+            <div class="modal-content">
+                <h3>First Night Order</h3>
+                <ul id="firstNightOrder"></ul>
+                <h3>Other Night Order</h3>
+                <ul id="otherNightOrder"></ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">Townsfolk</h2>
+        <div id="townsfolkContainer" class="role-container">
+            <!-- Role buttons will be added here -->
+        </div>
+        <h2 class="section-title">Outsiders</h2>
+        <div id="outsidersContainer" class="role-container">
+            <!-- Role buttons will be added here -->
+        </div>
+        <h2 class="section-title">Minions</h2>
+        <div id="minionsContainer" class="role-container">
+            <!-- Role buttons will be added here -->
+        </div>
+        <h2 class="section-title">Demons</h2>
+        <div id="demonsContainer" class="role-container">
+            <!-- Role buttons will be added here -->
+        </div>
+
+        <!-- Popup template (hidden by default) -->
+        <div id="popup" class="modal">
+            <div class="popup-content">
+                <img id="popupIcon" src="" alt="Role Icon" class="popup-icon">
+                <h2 id="popupTitle"></h2>
+                <p id="popupDescription"></p>
+            </div>
+        </div>
+
+
+        <div id="rulesModal" class="modal">
+            <div class="modal-content">
+                    <h1>Blood on the Clocktower</h1>
+
+                    <section class="setup">
+                        <h2>Setup</h2>
+                        <ul>
+                            <li><strong>Players:</strong> 6-20 participants sit (approximately) in a circle.</li>
+                            <li><strong>Roles:</strong> Each player receives a secret role ("character") from this list, either good (Townsfolk, Outsider) or evil (Demon, Minion). There are no duplicate characters.</li>
+                            <li><strong>Storyteller:</strong> One player acts as the Storyteller, managing the game and enforcing rules.</li>
+                        </ul>
+                    </section>
+
+                    <section class="game-structure">
+                        <h2>Game Structure</h2>
+                        <p>The game consists of alternating night and day phases:</p>
+                        <ul>
+                            <li><strong>Night Phase:</strong> Players with abilities use them e.g. the Demon uses their ability to eliminate a player.</li>
+                            <li><strong>Day Phase:</strong> Discussion (private and public) and deduction occur, ending with a vote to execute a suspect.</li>
+                        </ul>
+                    </section>
+
+                    <section class="objective">
+                        <h2>Objective</h2>
+                        <ul>
+                            <li><strong>Good Team:</strong> Wins by executing the Demon. Focuses on gathering information to achieve this.</li>
+                            <li><strong>Evil Team:</strong> Wins when only two players remain, one being the Demon. Aims to deceive players (to stay hidden) and eliminate players each night.</li>
+                        </ul>
+                    </section>
+
+                    <section class="additional-rules">
+                        <h2>Additional Rules</h2>
+                        <ul>
+                            <li>Deceased players keep their aligment (good/evil) and can still participate in discussions but lose their character's ability and can only vote one more time for the rest of the game.</li>
+                            <li>Character-specific rules supersede rules specified here.</li>
+                        </ul>
+                    </section>
+            </div>
+        </div>
+
+        <div id="roleCountsModal" class="modal">
+            <div class="modal-content">
+                <h3>Player Counts</h3>
+                <p>At each player count, there should be the following number of each type of character:</p>
+                <table>
+                    <tr>
+                        <th>Players</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15+</th>
+                    </tr>
+                    <tr>
+                        <td>Townsfolk</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>9</td>
+                        <td>9</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>Outsiders</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Minions</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Demon</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="buttonContainer" class="button-container">
+            <button id="viewOrderButton">View Night Order</button>
+        </div>
+
+        <div id="buttonContainer" class="button-container">
+            <button id="rules">How To Play</button>
+        </div>
+
+        <div id="buttonContainer" class="button-container">
+            <button id="roleCounts">View Character Counts</button>
+        </div>
+
+        <script src="main.bundle.js"></script>
+    </body>
+</html>

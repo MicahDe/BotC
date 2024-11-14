@@ -1,6 +1,6 @@
-# Gerog Gambit
+# Blood on the Clocktower Script Viewer
 
-A webapp to use when running Gerog Gambit games, keeps track of player status and handles voting.
+Does what it says on the tin
 
 # Dependencies
 

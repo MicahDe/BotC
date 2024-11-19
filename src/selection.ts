@@ -167,6 +167,55 @@ function generateUrl(): void {
     generatedUrlInput.value = url.toString();
 }
 
+//Function to generate and redirect to a random, valid url
+async function generateRandomScript(): Promise<void> {
+    const url = new URL(window.location.href);
+    let scriptRoles = "";
+    let roles = await fetchRolesForSelectionPage();
+    console.log(roles);
+    let townsfolk = 0;
+    let outsiders = 0;
+    let minions = 0;
+    let demons = 0;
+
+    while(townsfolk < 13 || outsiders < 4 || minions < 4 || demons < 4){
+        let role = roles[Math.floor(Math.random() * roles.length)];
+
+        if(!scriptRoles.includes(role.encoding)){
+            switch(role.roleType){
+                case "townsfolk":
+                    if(townsfolk < 13) {
+                        scriptRoles += role.encoding;
+                        townsfolk++;
+                        console.log(scriptRoles);
+                    } break;
+                case "outsider":
+                    if(outsiders < 4) {
+                        scriptRoles += role.encoding;
+                        outsiders++;
+                        console.log(scriptRoles);
+                    } break;
+                case "minion":
+                    if(minions < 4) {
+                        scriptRoles += role.encoding;
+                        minions++;
+                        console.log(scriptRoles);
+                    } break;
+                case "demon":
+                if(demons < 4) {
+                    scriptRoles += role.encoding;
+                    demons++;
+                    console.log(scriptRoles);
+                } break;
+            }
+        }
+    }
+
+    url.pathname = url.pathname.replace('selection', 'script');
+    url.searchParams.set('roles', scriptRoles);
+    window.open(url, '_blank');
+}
+
 
 // Function to copy the URL to the clipboard
 function copyToClipboard(): void {
@@ -212,6 +261,9 @@ async function initSelectionPage(): Promise<void> {
 
     const generateUrlButton = document.getElementById('generateUrlButton') as HTMLButtonElement;
     generateUrlButton.onclick = generateUrl;
+
+    const generateRandomScriptButton = document.getElementById('generateRandomScriptButton') as HTMLButtonElement;
+    generateRandomScriptButton.onclick = generateRandomScript;
 
     const copyUrlButton = document.getElementById('copyUrlButton') as HTMLButtonElement;
     copyUrlButton.onclick = copyToClipboard;

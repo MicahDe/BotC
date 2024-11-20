@@ -118,7 +118,7 @@ body {
     width: 70%;
 }
 
-#copyUrlButton, #generateUrlButton, #viewOrderButton, #rules, #launchUrlButton, #roleCounts {
+#copyUrlButton, #generateUrlButton, #viewOrderButton, #rules, #launchUrlButton, #roleCounts, #generateRandomScriptButton {
     padding: 10px 15px;
     background-color: #4CAF50;
     color: white;

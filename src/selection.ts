@@ -172,7 +172,6 @@ async function generateRandomScript(): Promise<void> {
     const url = new URL(window.location.href);
     let scriptRoles = "";
     let roles = await fetchRolesForSelectionPage();
-    console.log(roles);
     let townsfolk = 0;
     let outsiders = 0;
     let minions = 0;
@@ -187,26 +186,22 @@ async function generateRandomScript(): Promise<void> {
                     if(townsfolk < 13) {
                         scriptRoles += role.encoding;
                         townsfolk++;
-                        console.log(scriptRoles);
                     } break;
                 case "outsider":
                     if(outsiders < 4) {
                         scriptRoles += role.encoding;
                         outsiders++;
-                        console.log(scriptRoles);
                     } break;
                 case "minion":
                     if(minions < 4) {
                         scriptRoles += role.encoding;
                         minions++;
-                        console.log(scriptRoles);
                     } break;
                 case "demon":
-                if(demons < 4) {
-                    scriptRoles += role.encoding;
-                    demons++;
-                    console.log(scriptRoles);
-                } break;
+                    if(demons < 4) {
+                        scriptRoles += role.encoding;
+                        demons++;
+                    } break;
             }
         }
     }

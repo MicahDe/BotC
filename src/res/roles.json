@@ -776,9 +776,25 @@
         "encoding": "St"
     },
     {
+        "name": "Alsaahir",
+        "roleType": "townsfolk",
+        "description": "Each day, if you publicly guess which players are minion(s) and which are Demon(s), good wins.",
+        "iconPath": "res/icons/Alsaahir_icon.webp",
+        "gist": "Predicts evil team.",
+        "encoding": "Als"
+    },
+    {
+        "name": "Banshee",
+        "roleType": "townsfolk",
+        "description": "If the demon kills you, all players learn this. From now on, you may nominate twice per day, and vote twice per nomination.",
+        "iconPath": "res/icons/Banshee_icon.webp",
+        "gist": "Double daytime influence if killed by the demon.",
+        "encoding": "Ban"
+    },
+    {
         "name": "Acrobat",
-        "roleType": "outsider",
-        "description": "Each night (except the first night), if either good living neighbour is drunk or poisoned, you die.",
+        "roleType": "townsfolk",
+        "description": "Each night (except the first night), choose a player: if they are or become drunk or poisoned tonight, you die.",
         "iconPath": "res/icons/Acrobat_icon.webp",
         "gist": "Dies if neighbours malfunctioning.",
         "encoding": "Ac"
@@ -846,6 +862,14 @@
         "iconPath": "res/icons/Snitch_icon.webp",
         "gist": "Gives minions bluffs.",
         "encoding": "Sni"
+    },
+    {
+        "name": "Zealot",
+        "roleType": "outsider",
+        "description": "If there are 5 or more players alive, you must vote for every nomination.",
+        "iconPath": "res/icons/Zealot_icon.webp",
+        "gist": "Must always vote.",
+        "encoding": "Ze"
     },
     {
         "name": "Boomdandy",
@@ -928,12 +952,28 @@
         "encoding": "Wid"
     },
     {
+        "name": "Boffin",
+        "roleType": "minion",
+        "description": "The Demon (even if drunk or poisoned) has a not-in-play good character's ability. You both know which.",
+        "iconPath": "res/icons/Boffin_icon.webp",
+        "gist": "Gives their demon a good ability.",
+        "encoding": "Bof"
+    },
+    {
+        "name": "Summoner",
+        "roleType": "minion",
+        "description": "You get 3 bluffs. On the third night, choose a player: they become an evil demon of your choice. [No Demon]",
+        "iconPath": "res/icons/Summoner_icon.webp",
+        "gist": "Create a demon mid-game.",
+        "encoding": "Sum"
+    },
+    {
         "name": "Al-Hadikhia",
         "roleType": "demon",
         "description": "Each night (except the first night), choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
         "iconPath": "res/icons/Al-Hadikhia_icon.webp",
         "gist": "Forces life-death choice.",
-        "encoding": "Al-"
+        "encoding": "Alh"
     },
     {
         "name": "Kazali",
@@ -990,5 +1030,13 @@
         "iconPath": "res/icons/Riot_icon.webp",
         "gist": "Nominees die.",
         "encoding": "Ri"
+    },
+    {
+        "name": "Lord of Typhon",
+        "roleType": "demon",
+        "description": "Each night (except the first night), choose a player: they die. [Evil characters are in a line. You are in the middle. +1 Minion. -? to +? Outsiders]",
+        "iconPath": "res/icons/LordOfTyphon_icon.webp",
+        "gist": "Evil sit together.",
+        "encoding": "Lot"
     }
 ]

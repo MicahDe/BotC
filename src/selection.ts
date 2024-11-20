@@ -176,34 +176,67 @@ async function generateRandomScript(): Promise<void> {
     let outsiders = 0;
     let minions = 0;
     let demons = 0;
+    let roleAdded = false;
 
-    while(townsfolk < 13 || outsiders < 4 || minions < 4 || demons < 4){
+    while(townsfolk < 13 || outsiders < 4 || minions < 4 || demons < 4) {
         let role = roles[Math.floor(Math.random() * roles.length)];
 
-        if(!scriptRoles.includes(role.encoding)){
-            switch(role.roleType){
+        if(!scriptRoles.includes(role.encoding)) {
+            switch(role.roleType) {
                 case "townsfolk":
                     if(townsfolk < 13) {
                         scriptRoles += role.encoding;
                         townsfolk++;
+                        roleAdded = true;
                     } break;
                 case "outsider":
                     if(outsiders < 4) {
                         scriptRoles += role.encoding;
                         outsiders++;
+                        roleAdded = true;
                     } break;
                 case "minion":
                     if(minions < 4) {
                         scriptRoles += role.encoding;
                         minions++;
+                        roleAdded = true;
                     } break;
                 case "demon":
                     if(demons < 4) {
                         scriptRoles += role.encoding;
                         demons++;
+                        roleAdded = true;
                     } break;
+                default: break;
+            }
+
+            if(roleAdded) {
+                switch(role.encoding) {
+                    case "Cho":
+                        if(!scriptRoles.includes("Ki")) {
+                            if(townsfolk < 13) {
+                                scriptRoles += "Ki";
+                                townsfolk++;
+                            } else {
+                                scriptRoles = scriptRoles.replace("Cho", '');
+                                townsfolk--;
+                            }
+                        } break;
+                    case "Hu":
+                        if(!scriptRoles.includes("Da")) {
+                            if(outsiders < 4) {
+                                scriptRoles += "Da";
+                                outsiders++;
+                            } else {
+                                scriptRoles = scriptRoles.replace("Hu", '');
+                                townsfolk--;
+                            }
+                        } break;
+                    default: break;
+                }
             }
         }
+        roleAdded = false;
     }
 
     url.pathname = url.pathname.replace('selection', 'script');

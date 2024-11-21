@@ -103,7 +103,7 @@ body {
     }
 }
 
-.url-container, .button-container {
+.url-container, .horizontal-container {
     margin: 20px 10px;
     display: flex;
     justify-content: center;

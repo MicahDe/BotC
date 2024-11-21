@@ -103,10 +103,15 @@ body {
     }
 }
 
-.url-container, .button-container  {
+.url-container, .button-container {
     margin: 20px 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.qrcode {
+    display: flex;
     align-items: center;
 }
 
@@ -206,8 +211,8 @@ body {
 .popup-icon {
     display: block;
     margin: 0 auto;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
 }
 
 

@@ -29,6 +29,8 @@
     "dependencies": {
         "global": "^4.4.0",
         "hammerjs": "^2.0.8",
+        "qr-creator": "^1.0.0",
+        "qrcode": "^1.5.4",
         "tone": "^14.7.77",
         "webfontloader": "^1.6.28",
         "yarn": "^1.22.22"

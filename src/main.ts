@@ -101,8 +101,20 @@ function updateOrderList(listId: string, order: string[]): void {
     const listElement = document.getElementById(listId) as HTMLUListElement;
     listElement.innerHTML = ''; // Clear existing list
     order.forEach(role => {
-        const listItem = document.createElement('li');
-        listItem.textContent = role;
+        let listItem = document.createElement("div");
+        if(role == "DAWN" || role == "MINION INFO" || role == "DEMON INFO" || role == "DUSK"){
+            listItem.textContent = role;
+        } else {
+            var checkBox = document.createElement('input') as HTMLInputElement;
+            checkBox.type = "checkbox";
+            checkBox.setAttribute("id", role);
+            checkBox.value = role;
+            let label = document.createElement("label");
+            label.setAttribute("for", role);
+            label.textContent = role;
+            listItem.append(checkBox);
+            listItem.append(label);
+        }
         listElement.appendChild(listItem);
     });
 }

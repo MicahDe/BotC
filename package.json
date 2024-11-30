@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "hammerjs": "^2.0.8",
+        "qrcode": "^1.5.4",
         "tone": "^14.7.77",
         "webfontloader": "^1.6.28"
     }

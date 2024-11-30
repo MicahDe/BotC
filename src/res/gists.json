@@ -33,8 +33,10 @@
 	"Minstrel": "Drunkens on Minion death.",
 	"Tea Lady": "Protects good neighbors.",
 	"Pacifist": "May save executed.",
+	"Village Idiot": "Checks alignment, but may be drunk.",
 	"Fool": "Survives first death.",
 	"Goon": "Drunkens choosers. Swaps alignment.",
+	"Ogre": "Does not know their alignment.",
 	"Lunatic": "Thinks they are demon.",
 	"Tinker": "Dies randomly.",
 	"Moonchild": "Chooses killer on death.",
@@ -75,6 +77,7 @@
 	"Amnesiac": "Unknown ability.",
 	"Atheist": "No evil players; must execute Storyteller.",
 	"Balloonist": "Learns different character types.",
+	"Banshee": "Gain influence if killed by the demon.",
 	"Bounty Hunter": "Learns evil players.",
 	"Cannibal": "Gains executee's ability.",
 	"Choirboy": "Learns Demon if King dies.",
@@ -122,5 +125,6 @@
 	"Lil' Monsta": "A minion is the demon.",
 	"Lleech": "Kills, dies when host dies.",
 	"Ojo": "Kills chosen character.",
-	"Riot": "Nominees die."
+	"Riot": "Nominees die.",
+	"Lord of Typhon": "Evil sit together."
 }

@@ -103,10 +103,15 @@ body {
     }
 }
 
-.url-container, .button-container  {
+.url-container, .horizontal-container {
     margin: 20px 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.qrcode {
+    display: flex;
     align-items: center;
 }
 
@@ -118,7 +123,7 @@ body {
     width: 70%;
 }
 
-#copyUrlButton, #generateUrlButton, #viewOrderButton, #rules, #launchUrlButton, #roleCounts {
+#copyUrlButton, #generateUrlButton, #viewOrderButton, #rules, #launchUrlButton, #roleCounts, #generateRandomScriptButton {
     padding: 10px 15px;
     background-color: #4CAF50;
     color: white;
@@ -206,8 +211,8 @@ body {
 .popup-icon {
     display: block;
     margin: 0 auto;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -310,7 +315,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-.script-buttons, .selection-button {
+.script-buttons, .selection-button, .randomiser-button {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center align the buttons */

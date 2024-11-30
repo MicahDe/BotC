@@ -2,6 +2,8 @@
  * COPYRIGHT 2023 Micah De Silva
  */
 
+import QRCode from 'qrcode';
+
 // Interface for Role data
 interface Role {
     name: string;
@@ -9,6 +11,7 @@ interface Role {
     iconPath: string;
     roleType: string;
     gist: string;
+    encoding: string;
 }
 
 const tb = ["Chef","Empath","Fortune Teller","Investigator","Librarian","Mayor","Monk","Ravenkeeper","Slayer","Soldier","Undertaker","Virgin","Washerwoman","Butler","Drunk","Recluse","Saint","Baron","Poisoner","Scarlet Woman","Spy","Imp"]
@@ -73,21 +76,12 @@ async function fetchRoles(): Promise<Role[]> {
     return response.json();
 }
 
-
-
-
-
-
-
-
 document.getElementById('viewOrderButton')?.addEventListener('click', () => {
     fetch('res/nightsheet.json')
         .then(response => response.json())
         .then(data => displayNightOrder(data));
     showModal();
 });
-
-
 
 function displayNightOrder(nightData: any): void {
     let selectedRoles = Array.from(filteredRoles,role => role.name);
@@ -107,8 +101,20 @@ function updateOrderList(listId: string, order: string[]): void {
     const listElement = document.getElementById(listId) as HTMLUListElement;
     listElement.innerHTML = ''; // Clear existing list
     order.forEach(role => {
-        const listItem = document.createElement('li');
-        listItem.textContent = role;
+        let listItem = document.createElement("div");
+        if(role == "DAWN" || role == "MINION INFO" || role == "DEMON INFO" || role == "DUSK"){
+            listItem.textContent = role;
+        } else {
+            var checkBox = document.createElement('input') as HTMLInputElement;
+            checkBox.type = "checkbox";
+            checkBox.setAttribute("id", role);
+            checkBox.value = role;
+            let label = document.createElement("label");
+            label.setAttribute("for", role);
+            label.textContent = role;
+            listItem.append(checkBox);
+            listItem.append(label);
+        }
         listElement.appendChild(listItem);
     });
 }
@@ -141,8 +147,6 @@ function showRules(): void {
     });
 }
 
-
-
 document.getElementById('roleCounts')?.addEventListener('click', () => {
     showRoleCounts();
 });
@@ -159,14 +163,29 @@ function showRoleCounts(): void {
     });
 }
 
-
-
-
-
 // Main function to initialize the page
 async function init(): Promise<void> {
     const roles = await fetchRoles();
     const encodedSelectedRoles = getRolesFromQueryString();
+
+    var opts = {
+        errorCorrectionLevel: 'H',
+        type: 'image/png',
+        quality: 0.3,
+        margin: 1,
+        color: {
+          dark:"#636877FF",
+          light:"#1B2021FF"
+        }
+      }
+      
+      let scriptUrl = document.URL;
+      QRCode.toDataURL(scriptUrl, opts, function (err, url) {
+        if (err) throw err
+      
+        var img = document.getElementById('qrcode') as HTMLImageElement;
+        img.src = url;
+      })
 
     // Create a mapping of encodings to role names
     const roleDecodings = roles.reduce((acc, role) => {
@@ -176,7 +195,6 @@ async function init(): Promise<void> {
 
     // Decode the selected roles
     const selectedRoles = encodedSelectedRoles.map(encoding => roleDecodings[encoding]);
-
 
     // Filter roles based on the query string
     filteredRoles = roles.filter(role => selectedRoles.includes(role.name)
@@ -213,11 +231,7 @@ async function init(): Promise<void> {
 // Initialize the page
 init();
 
-
-
-
 // SCRIPT NAME TO PAGE TITLE
-
 function getPageNameFromQueryString(): string | null {
     const urlParams = new URLSearchParams(window.location.search);
     if(!urlParams.get('roles')){

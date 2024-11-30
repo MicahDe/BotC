@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BotC Script Viewer - Home</title>
     <link rel="stylesheet" href="main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="res/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicon/favicon-16x16.png">
+    <link rel="manifest" href="res/favicon/site.webmanifest">
 </head>
+
 <body>
+
     <div class="centered-container">
         <img src="res/botc.png" class="landing-image"><br>
         <div class="landing-container" style="animation: slidein 1s ease 400ms forwards; opacity: 0">
             Welcome to the Blood on the Clocktower script viewer.
             <br>
             <br>
-            <h2 class="section-title">PLEASE SELECT A SCRIPT:</h2>
-                <!-- Role buttons will be added here -->
-                <div class="script-buttons">
-                    <a href="script.html" class="script-button">Trouble Brewing</a>
-                    <a href="script.html?roles=GrSaiChaExInnGaGoCoPrMiTePaFooGooLuTiMooGodDeAsMasZoPuShPo&name=Bad+Moon+Rising" class="script-button">Bad Moon Rising</a>
-                    <a href="script.html?roles=ClDreSnMatFlToOrSavSePhArJuSagMuSwBarKlEvWiCePiFaVigNoVo&name=Sects+%26+Violets" class="script-button">Sects & Violets</a>
+            <h2 class="section-title">PLEASE SELECT A SCRIPT</h2>
+            <!-- Role buttons will be added here -->
+            <div class="script-buttons">
+                <a href="script.html" class="script-button">Trouble Brewing</a>
+                <a href="script.html?roles=GrSaiChaExInnGaGoCoPrMiTePaFooGooLuTiMooGodDeAsMasZoPuShPo&name=Bad+Moon+Rising"
+                    class="script-button">Bad Moon Rising</a>
+                <a href="script.html?roles=ClDreSnMatFlToOrSavSePhArJuSagMuSwBarKlEvWiCePiFaVigNoVo&name=Sects+%26+Violets"
+                    class="script-button">Sects & Violets</a>
             </div>
-            <h2 class="section-title" style="animation: slidein 1s ease 600ms forwards; opacity: 0">Or build one yourself:</h2>
-        
+            <h2 class="section-title" style="animation: slidein 1s ease 600ms forwards; opacity: 0">Or build one
+                yourself
+            </h2>
+
             <div class="selection-button" style="animation: slidein 1s ease 600ms forwards; opacity: 0">
                 <a href="selection.html" class="script-button">Script Builder</a>
+                <a id="generateRandomScript" class="script-button" style="cursor: pointer">Random Script</a>
             </div>
         </div>
     </div>
+
+    <script src="index.bundle.js"></script>
 </body>
+
 </html>

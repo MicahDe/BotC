@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Role Selection - BotC Script Viewer</title>
     <link rel="stylesheet" href="main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="res/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicon/favicon-16x16.png">
+    <link rel="manifest" href="res/favicon/site.webmanifest">
 </head>
+
 <body>
     <h2 class="section-title" id="townsfolk-title">Townsfolk (0)</h2>
     <div id="townsfolkContainer" class="selection-container">
@@ -35,7 +42,7 @@
     <div id="buttonContainer" class="horizontal-container">
         <button id="generateRandomScriptButton" class="generate-random-script-button">Generate Random Script</button>
     </div>
-    
+
     <!-- Container for the generated URL -->
     <div id="urlContainer" class="url-container">
         <input type="text" id="generatedUrl" readonly>
@@ -45,17 +52,18 @@
 
     <br>
 
-     <br />
-      
-     <!-- Popup template (hidden by default) -->
-        <div id="popup" class="modal">
-            <div class="popup-content">
-                <img id="popupIcon" src="" alt="Role Icon" class="popup-icon">
-                <h2 id="popupTitle"></h2>
-                <p id="popupDescription"></p>
-            </div>
+    <br />
+
+    <!-- Popup template (hidden by default) -->
+    <div id="popup" class="modal">
+        <div class="popup-content">
+            <img id="popupIcon" src="" alt="Role Icon" class="popup-icon">
+            <h2 id="popupTitle"></h2>
+            <p id="popupDescription"></p>
         </div>
+    </div>
 
     <script src="selection.bundle.js"></script>
 </body>
+
 </html>

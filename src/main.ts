@@ -163,7 +163,6 @@ function showRoleCounts(): void {
     });
 }
 
-// Main function to initialize the page
 async function init(): Promise<void> {
     const roles = await fetchRoles();
     const encodedSelectedRoles = getRolesFromQueryString();
@@ -193,10 +192,8 @@ async function init(): Promise<void> {
         return acc;
     }, {});
 
-    // Decode the selected roles
     const selectedRoles = encodedSelectedRoles.map(encoding => roleDecodings[encoding]);
 
-    // Filter roles based on the query string
     filteredRoles = roles.filter(role => selectedRoles.includes(role.name)
     );
 
@@ -228,7 +225,6 @@ async function init(): Promise<void> {
     });
 }
 
-// Initialize the page
 init();
 
 // SCRIPT NAME TO PAGE TITLE
@@ -249,5 +245,4 @@ function setDocumentTitle(): void {
     }
 }
 
-// Call this function at an appropriate place in your script
 setDocumentTitle();

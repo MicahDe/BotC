@@ -1,8 +1,7 @@
 /**
- * COPYRIGHT 2023 Micah De Silva
+ * COPYRIGHT 2024 Micah De Silva
  */
 
- // Interface for Role data
 interface Role {
     name: string;
     description: string;
@@ -12,7 +11,6 @@ interface Role {
     encoding: string;
 }
 
-// Function to show the popup
 function showPopupSP(role: Role): void {
     const popup = document.getElementById('popup') as HTMLDivElement;
     const popupIcon = document.getElementById('popupIcon') as HTMLImageElement;
@@ -33,13 +31,11 @@ function showPopupSP(role: Role): void {
     });
 }
 
-// Function to close the popup
 function closePopupSP(): void {
     const popup = document.getElementById('popup') as HTMLDivElement;
     popup.style.display = 'none';
 }
 
-// Function to fetch roles from the JSON file
 async function fetchRolesForSelectionPage(): Promise<Role[]> {
     const response = await fetch('res/roles.json');
     return response.json();
@@ -53,11 +49,10 @@ function modifyCount(divId: string, amount: number) {
     element.textContent = element.textContent.split("(")[0] + "(" + (currentValue + amount) + ")";
 }
 
-// Function to create a checkbox for each role
 function createRoleCheckbox(role: Role): HTMLDivElement {
     const roleBox = document.createElement('div');
     roleBox.className = 'role-box';
-    roleBox.setAttribute('data-encoding', role.encoding); // Set the data-encoding attribute
+    roleBox.setAttribute('data-encoding', role.encoding); 
 
     const icon = document.createElement('img');
     icon.src = role.iconPath;
@@ -77,7 +72,7 @@ function createRoleCheckbox(role: Role): HTMLDivElement {
 
     const selectionArea = document.createElement('div');
     selectionArea.className = 'selection-area';
-    selectionArea.textContent = '+'; // Indicate this area is for selection
+    selectionArea.textContent = '+';
 
     checkbox.addEventListener('change', function() {
         if (this.checked) {
@@ -129,13 +124,11 @@ function createRoleCheckbox(role: Role): HTMLDivElement {
     roleBox.appendChild(selectionArea);
 
 
-    // Event listener for checkbox
     selectionArea.addEventListener('click', function() {
         checkbox.checked = !checkbox.checked;
         checkbox.dispatchEvent(new Event('change'));
     });
 
-    // Show description popup when the rest of the box is clicked
     roleBox.addEventListener('click', function(event) {
         if (event.target !== checkbox && event.target !== selectionArea) {
             showPopupSP(role);
@@ -146,7 +139,6 @@ function createRoleCheckbox(role: Role): HTMLDivElement {
     return roleBox;
 }
 
-// Function to generate the URL
 function generateUrl(): void {
     const selectedRoles = Array.from(document.querySelectorAll('.role-checkbox:checked'))
                               .map(input => {
@@ -167,8 +159,7 @@ function generateUrl(): void {
     generatedUrlInput.value = url.toString();
 }
 
-//Function to generate and redirect to a random, valid url
-async function generateRandomScript(): Promise<void> {
+export async function generateRandomScript(): Promise<void> {
     const url = new URL(window.location.href);
     let scriptRoles = "";
     let roles = await fetchRolesForSelectionPage();
@@ -239,20 +230,19 @@ async function generateRandomScript(): Promise<void> {
         roleAdded = false;
     }
 
-    url.pathname = url.pathname.replace('selection', 'script');
+    url.pathname = 'script.html';
     url.searchParams.set('roles', scriptRoles);
+    url.searchParams.set('name', "Random Script");
     window.open(url, '_blank');
 }
 
 
-// Function to copy the URL to the clipboard
 function copyToClipboard(): void {
     const generatedUrlInput = document.getElementById('generatedUrl') as HTMLInputElement;
     generatedUrlInput.select();
     document.execCommand('copy');
 }
 
-// Function to launch the URL in a new tab
 function launchUrl(): void {
     const generatedUrlInput = document.getElementById('generatedUrl') as HTMLInputElement;
     const url = generatedUrlInput.value;
@@ -261,7 +251,6 @@ function launchUrl(): void {
     }
 }
 
-// Function to initialize the selection page
 async function initSelectionPage(): Promise<void> {    
     const roles = await fetchRolesForSelectionPage();
     const townsfolkContainer = document.getElementById('townsfolkContainer') as HTMLDivElement;
@@ -299,5 +288,8 @@ async function initSelectionPage(): Promise<void> {
     document.getElementById('launchUrlButton')!.addEventListener('click', launchUrl);
 }
 
-
-initSelectionPage();
+// Only do this if we're on the selection page
+if (window.location.pathname.includes('selection'))
+{
+    initSelectionPage();
+}

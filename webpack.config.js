@@ -8,7 +8,8 @@ let config = {
     mode: "development",
     entry: {
         main: "./src/main.ts",
-        selection: "./src/selection.ts"
+        selection: "./src/selection.ts",
+        index: "./src/index.ts",
     },
     devServer: {
         https: false,
@@ -52,7 +53,7 @@ let config = {
             patterns: [
                 { from: "src/html", to: "" },
                 { from: "src/style", to: "" },
-                { from: "src/res", to: "res" }
+                { from: "src/res", to: "res" },
             ],
         }),
     ],
